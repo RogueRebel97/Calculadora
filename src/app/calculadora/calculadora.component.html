@@ -1,0 +1,20 @@
+<h3>{{titulo}}</h3>
+<br>
+
+Numero 1: <input type="number" [(ngModel)]="num1">
+<br>
+
+Numero 2: <span *ngIf="num1"><input type="numer" [(ngModel)]="num2"></span>
+<br>
+
+Resultado: <span *ngIf="num1" [style.color]="'red'"> {{resultado}}</span>
+<br>
+<button (click)="sumar()">Sumar</button>
+
+<hr>
+<h4>Historial</h4>
+
+<ul>
+  <li *ngFor="let operacion of historial">{{operacion}}</li>
+</ul>
+<button (click)="limpiar()">Limpiar</button>
