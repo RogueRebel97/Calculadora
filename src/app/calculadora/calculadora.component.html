@@ -1,20 +1,25 @@
-<h3>{{titulo}}</h3>
-<br>
+<div id="box">
+  <h3>{{titulo}}</h3>
+  <br>
+  Numero 1: <input type="number" [(ngModel)]="num1">
+  Numero 2: <span><input type="number" [(ngModel)]="num2" *ngIf="num1"></span>
+  Resultado: <span [style.color]="'red'"> {{resultado}}</span>
+  <hr>
+  <div id="botones">
+    <button (click)=" sumar()">Sumar</button>
+    <button (click)="restar()">Restar</button>
+    <button (click)="mult()">Multiplicar</button>
+    <button (click)="div()">Dividir</button>
+    <button (click)="bin()">Binario</button>
+  </div>
+  <hr>
+</div>
 
-Numero 1: <input type="number" [(ngModel)]="num1">
-<br>
+<div id="historial">
+  <h4>Historial</h4>
 
-Numero 2: <span *ngIf="num1"><input type="numer" [(ngModel)]="num2"></span>
-<br>
-
-Resultado: <span *ngIf="num1" [style.color]="'red'"> {{resultado}}</span>
-<br>
-<button (click)="sumar()">Sumar</button>
-
-<hr>
-<h4>Historial</h4>
-
-<ul>
-  <li *ngFor="let operacion of historial">{{operacion}}</li>
-</ul>
-<button (click)="limpiar()">Limpiar</button>
+  <ul>
+    <li *ngFor="let operacion of historial">{{operacion}}</li>
+  </ul>
+  <button (click)="limpiar()">Limpiar</button>
+</div>
